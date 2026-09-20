@@ -1,0 +1,3 @@
+# Daily Tool Reflection — Sketchbook
+
+One tool I use almost every day is my sketchbook. I started using sketchbooks more regularly as my projects became more physical and interaction-based, because I needed a quick way to capture ideas before they were fully developed. I use it less for polished drawings and more as a thinking tool—for rough diagrams, mechanical structures, interaction flows, dimensions, and small notes that help me understand how an idea might work. I like that there is almost no setup required; I can immediately put an idea on paper and change it as I think. If I did not have a sketchbook, I would probably use loose paper, an iPad, or digital tools like Figma, but I think the process would feel slightly slower and more deliberate.
