@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern Brush</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/p5.min.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Pattern Brush</h1>
+    <p class="description">Hold and drag your mouse on the canvas to draw a simple dot pattern.</p>
+
+    <section class="controls">
+      <label>
+        Brush Size
+        <span id="size-value">30</span>
+      </label>
+      <input id="brush-size" type="range" min="5" max="80" value="30">
+
+      <label>
+        Density
+        <span id="density-value">4</span>
+      </label>
+      <input id="density" type="range" min="1" max="10" value="4">
+
+      <label for="brush-color">Brush Color</label>
+      <input id="brush-color" type="color" value="#111111">
+
+      <div class="buttons">
+        <button id="clear-button">Clear</button>
+        <button id="download-button">Download PNG</button>
+      </div>
+    </section>
+
+    <div id="canvas-container"></div>
+  </main>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
