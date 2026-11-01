@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#eeeeee" />
+  <title>Reference Playground</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div>
+          <h1>Reference Playground</h1>
+          <p>A space for unexpected connections.</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="button button-subtle" id="clear-board" type="button" title="Remove all images from the board">Clear board</button>
+        <button class="button button-primary" id="add-images" type="button">+ Add images</button>
+        <input id="file-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden />
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="workspace-panel" aria-labelledby="board-title">
+        <div class="section-topline">
+          <div>
+            <span class="eyebrow">01 / WORKSPACE</span>
+            <h2 id="board-title">Workspace <span class="muted count" id="reference-count">0 references</span></h2>
+          </div>
+          <button class="button button-outline" type="button" id="surprise-button" disabled><span aria-hidden="true">↝</span> Surprise me</button>
+        </div>
+
+        <div id="board" class="board" role="region" aria-label="Reference board. Drop images here and drag them to arrange.">
+          <div class="board-grid" aria-hidden="true"></div>
+          <div class="board-empty" id="board-empty">
+            <div class="empty-icon" aria-hidden="true"><span>◇</span><span>□</span></div>
+            <h3>Drop your references here.</h3>
+            <p>Drop images here, or add them from your computer.<br />Then move them around to explore.</p>
+            <div class="empty-buttons">
+              <button class="button button-primary" type="button" id="empty-add">Add images</button>
+              <button class="button button-outline" type="button" id="load-demo">Try demo references</button>
+            </div>
+          </div>
+          <div class="drop-overlay" id="drop-overlay" aria-hidden="true">Drop images to add them</div>
+          <div class="board-corner-note" id="board-corner-note">Click to select · Drag to move</div>
+        </div>
+        <div class="board-footer">
+          <span>TIP: Click two images to connect them, or use <strong>Surprise me</strong>.</span>
+          <span>JPG · PNG · WEBP · GIF</span>
+        </div>
+      </section>
+
+      <aside class="sidebar" aria-label="Connection panel">
+        <div class="side-heading">
+          <span class="eyebrow">02 / CONNECTION</span>
+          <h2>Make a connection.</h2>
+          <p>Choose two references. What can one borrow from the other?</p>
+        </div>
+
+        <div class="pair-grid">
+          <div class="pair-slot" id="pair-a">
+            <div class="pair-slot-preview"><span class="slot-placeholder">A</span></div>
+            <div class="pair-slot-label"><span>REFERENCE A</span><strong>Choose an image</strong></div>
+          </div>
+          <div class="pair-slot" id="pair-b">
+            <div class="pair-slot-preview"><span class="slot-placeholder">B</span></div>
+            <div class="pair-slot-label"><span>REFERENCE B</span><strong>Choose an image</strong></div>
+          </div>
+        </div>
+
+        <div class="connection-form">
+          <label for="feature-a">What stands out in A?</label>
+          <input id="feature-a" type="text" placeholder="e.g. geometric form" disabled maxlength="100" />
+          <label for="feature-b">What stands out in B?</label>
+          <input id="feature-b" type="text" placeholder="e.g. repeated motion" disabled maxlength="100" />
+
+          <div class="prompt-area">
+            <div class="prompt-topline"><span>QUESTION TO TRY</span><button type="button" id="new-prompt" disabled>Another ↗</button></div>
+            <p id="prompt-text">What happens when you combine the form of A with the behavior of B?</p>
+          </div>
+
+          <label for="idea-text">What new idea comes to mind?</label>
+          <textarea id="idea-text" rows="4" placeholder="What if…" disabled maxlength="1200"></textarea>
+          <button type="button" class="button button-dark save-button" id="save-idea" disabled>Save idea <span aria-hidden="true">↗</span></button>
+        </div>
+
+        <div class="saved-section">
+          <div class="saved-heading">
+            <h3>Ideas <span id="idea-count">0</span></h3>
+            <span>YOUR EXPLORATIONS</span>
+          </div>
+          <div id="ideas-list" class="ideas-list"><p class="no-ideas">Your saved connections will appear here.</p></div>
+        </div>
+      </aside>
+    </main>
+    <footer class="site-footer">Collect / Connect / Explore <span>Reference Playground / 01</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
